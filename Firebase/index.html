@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="assets/txtReader.js"></script>
+    <script src="assets/database.js"></script>
+    <script src="assets/firebaseUpdater.js"></script>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBciPo3ZYs0G3dG9oDKbJt-A2iVxG6JIik",
+            authDomain: "gpa-visualizer.firebaseapp.com",
+            databaseURL: "https://gpa-visualizer.firebaseio.com",
+            projectId: "gpa-visualizer",
+            storageBucket: "gpa-visualizer.appspot.com",
+            messagingSenderId: "665326657591"
+        };
+        firebase.initializeApp(config);
+
+        window.onload = function (e) {
+            txtReader();
+        }
+    </script>
+    </div>
+</body>
+
+</html>

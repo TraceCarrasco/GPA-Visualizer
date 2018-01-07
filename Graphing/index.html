@@ -1,0 +1,16 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <canvas id="graph" width="450" height="400"></canvas>
+    <script src="assets/Grapher.js"></script>
+    <script>
+        var grapher = new Grapher();
+
+        window.onload = grapher.graph({grades:[62.9,20.2,9,3.4,2.2,12.1,32.1],ave:3.635});
+    </script>
+</body>
+
+</html>

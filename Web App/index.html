@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../Graphing/assets/Grapher.js"></script>
+    <script src="../Firebase/assets/Database.js"></script>
+    <script src="assets/ClassDisplayer.js"></script>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBciPo3ZYs0G3dG9oDKbJt-A2iVxG6JIik",
+            authDomain: "gpa-visualizer.firebaseapp.com",
+            databaseURL: "https://gpa-visualizer.firebaseio.com",
+            projectId: "gpa-visualizer",
+            storageBucket: "gpa-visualizer.appspot.com",
+            messagingSenderId: "665326657591"
+        };
+        firebase.initializeApp(config);
+
+        // First Query
+        var ref = firebase.database().ref("cs/202");
+        var temp;
+        ref.on("value", function (snapshot) {
+            var classDisplayer = new ClassDisplayer();
+            classDisplayer.DisplayClassSet(snapshot.val());
+        });
+    </script>
+    <div class="classTitle">
+        
+    </div>
+    <div class="classOptions">
+        
+    </div>
+    <div class="termOptions">
+
+    </div>
+    <div class="lectureOptions">
+
+    </div>
+    <canvas id="GPAgraph" width="450" height="400"></canvas>
+</body>
+
+</html>
