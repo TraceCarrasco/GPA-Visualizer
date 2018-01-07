@@ -53,6 +53,15 @@ Database.prototype.snapshotToArray = function(snapshot) {
     // TODO
 };
 
+// baseRef - the base of all the children in Firebase that you want to get
+Database.prototype.query = function (baseRef, callback) {
+    var ref = firebase.database().ref(baseRef);
+    ref.on("value", function (snapshot) {
+        callback(snapshot.val());
+    }.bind(callback));
+}        
+
+Database.prototype
 function convertToIntArray(a) {
     var n = [];
     for(var i = 0; i < a.length; i++)
